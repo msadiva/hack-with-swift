@@ -95,3 +95,54 @@ print ("Temperature in celsius is \(celsius_temperature)")
 print ("Temperature in fahrenheit is \(farh_temperature)")
 
 
+// Data Structures in Swift
+
+// Array - unlike python, we cannot store values in array of different type
+
+// actually we can if we use [Any] while creating the array
+
+// var arr = ["Sadiva", 15]
+
+//print (arr)
+
+var arr = [String]()
+
+arr.append("Sadiva")
+arr.append("Sanjay")
+arr.append("Alka")
+
+print (arr[0], arr.count)
+
+arr.remove(at: 0)
+
+print (arr)
+
+var arr2 = [Any]()
+
+arr2.append("Sadiva")
+
+arr2.append(12)
+
+print (arr2)
+
+
+print (arr.sorted())
+
+print (arr.reversed())
+
+// now explorring dictionary 
+
+var info = [String:Any]()
+
+info["name"] = "Sadiva"
+
+info["age"] = 26
+
+info["location"] = "Delhi"
+
+print (info)
+
+ // print(info["name"]) 
+
+print (info["income", default : "N/A"])
+
