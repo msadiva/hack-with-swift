@@ -146,3 +146,31 @@ print (info)
 
 print (info["income", default : "N/A"])
 
+// exploring sets
+
+var infoset = Set<AnyHashable>()
+
+infoset.insert("Sadiva")
+
+infoset.insert("Sanjay")
+
+infoset.insert(26)
+
+print (infoset)
+
+
+print (infoset.contains("Alka"))
+
+// playing around with enum now 
+
+enum weekday {
+    case monday, tuesday, wednesday, thursday, friday
+}
+
+var day1 = weekday.monday 
+
+print (day1)
+
+day1 = .tuesday
+
+print (day1)
