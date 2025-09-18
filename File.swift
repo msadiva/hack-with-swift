@@ -65,3 +65,33 @@ print (!authenticated)
 
 authenticated.toggle()
 print (authenticated)
+
+
+
+// playing with string interpolation
+
+var newname = "sadiva"
+
+let age = 26
+
+
+let combined = "Hello, My name is \(newname) and my age is \(age) "
+
+print (combined)
+
+
+//Creates a constant holding any temperature in Celsius.
+//Converts it to Fahrenheit by multiplying by 9, dividing by 5, then adding 32.
+//Prints the result for the user, showing both the Celsius and Fahrenheit values.
+
+
+
+var celsius_temperature = 35
+
+var farh_temperature = ((celsius_temperature*9) / 5) + 32
+
+print ("Temperature in celsius is \(celsius_temperature)")
+
+print ("Temperature in fahrenheit is \(farh_temperature)")
+
+
