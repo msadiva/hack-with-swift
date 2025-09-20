@@ -292,6 +292,45 @@ default:
     print ("Default")
 }
 
+// usint ternary operator
+
+let decision = "Yes"
+
+print (decision == "Yes" ? "You are selected" : "Sorry, You are disqualified")
+
+let userAge = 55
+
+var userCat = userAge >= 18 ? true : false 
+
+print (userCat)
+
+// using a for loop 
+
+for i in 1...12 {
+
+    print (i)
+}
+
+// using while loop 
+
+var countdown = 10 
+
+while countdown > 1{
+
+    print ("Countdown = \(countdown)")
+    countdown -= 1
+}
+
+print ("Blast off")
 
 
+// skipping with break and continue
 
+for i in 1..<5 {
+
+    if i == 3 {
+        continue
+    }
+
+    print (i)
+}
