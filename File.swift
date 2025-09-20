@@ -212,3 +212,27 @@ var testset = Set(testarr)
 print (testset)
 
 print (testset.count)
+
+// if condition in swift 
+
+var username = "sadivam"
+
+if username.isEmpty {
+    username = "anonymous"
+    print ("username was empty")
+}
+
+print (username)
+
+
+var score2: Double
+
+score2 = 85.5
+
+if score2 >= 90 {
+    print ("A GRADE")
+} else if score2 >= 80 {
+    print ("B GRADE")
+} else {
+    print ("C GRADE")
+}
