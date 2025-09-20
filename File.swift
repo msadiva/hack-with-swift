@@ -236,3 +236,62 @@ if score2 >= 90 {
 } else {
     print ("C GRADE")
 }
+
+// || - or operator and && - and operator
+
+let userage = 16
+
+let parentConsent = false
+
+
+if userage >= 18 || parentConsent {
+    print ("User is allowed to play videogames")
+} else {
+    print ("User is not allowed to play videogames")
+}
+
+// using switch instead of if else 
+
+enum Weather {
+    case sunny, winter, snow, rainy, unknown
+}
+
+var day = Weather.sunny 
+
+print (day)
+
+switch day {
+
+case .sunny:
+    print ("It should be a sunny day")
+case .winter:
+    print ("It should be a cold day")
+case.snow:
+    print ("It should be a snowy day")
+case.rainy:
+    print ("It should be a rainy day")
+case.unknown:
+    print ("Unknown day")
+}
+
+
+// using fallthrough implements the following cases too 
+
+
+let scorecard = 800
+
+switch scorecard {
+
+case 800:
+    print ("Score = 800")
+    fallthrough
+case 700:
+    print ("Score = 700")
+    fallthrough
+default:
+    print ("Default")
+}
+
+
+
+
