@@ -174,3 +174,41 @@ print (day1)
 day1 = .tuesday
 
 print (day1)
+
+// playing around with type annotation 
+
+let myname : String 
+
+myname = "Sadiva Madaan"
+print (myname)
+
+var score: Double 
+
+score = 2
+
+print (score)
+
+
+// This time the challenge is to create an array of strings, then write some code that prints the number of items in the array and also the number of unique items in the array.
+
+var testarr = [String]()
+
+testarr.append("Sadiva")
+
+//print (testarr)
+
+testarr.append("Sanjay")
+
+testarr.append("Alka")
+
+testarr.append("Sadiva")
+
+print (testarr.count)
+
+// convert arr to set
+
+var testset = Set(testarr)
+
+print (testset)
+
+print (testset.count)
