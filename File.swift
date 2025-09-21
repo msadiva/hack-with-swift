@@ -354,3 +354,77 @@ for num in 1...20 {
         print (num)
     }
 }
+
+// creating function
+
+func isFizzBuzz(number: Int) {
+
+    if number.isMultiple(of: 3) && number.isMultiple(of: 5) {
+        print ("FizzBuzz")
+    } else if number.isMultiple(of: 3) {
+        print ("Fizz")
+    } else if number.isMultiple(of: 5) {
+        print ("Buzz")
+    } else {
+        print ("Not Applicable")
+    }
+}
+
+isFizzBuzz(number : 56)
+isFizzBuzz(number: 100)
+
+// -> tells the function the type of value to be returned
+
+
+func isFizzBuzz2(number: Int) -> String {
+
+    if number.isMultiple(of: 3) && number.isMultiple(of: 5) {
+        return "FizzBuzz"
+    } else if number.isMultiple(of: 3) {
+        return "Fizz"
+    } else if number.isMultiple(of: 5) {
+        return "Buzz"
+    } else {
+        return "Not Applicable"
+    }
+}
+
+print (isFizzBuzz2(number: 60))
+
+// if we want to return multiple values 
+
+func isFizzBuzz3(number: Int) -> (String, Int) {
+
+    if number.isMultiple(of: 3) && number.isMultiple(of: 5) {
+        return ("FizzBuzz", number)
+    } else if number.isMultiple(of: 3) {
+        return ("Fizz", number)
+    } else if number.isMultiple(of: 5) {
+        return ("Buzz", number)
+    } else {
+        return ("Not Applicable", number)
+    }
+}
+
+print (isFizzBuzz3(number : 60))
+
+// swift allows different names for external and internal parameters
+
+func table(for number: Int) {
+
+    for i in 1...10 {
+        print ("\(number * i)")
+    }
+}
+
+table(for: 5)
+
+func table2(_ number: Int) {
+
+    for i in 1...20 {
+        print ("\(number * i)")
+    }
+}
+
+table2(6)
+
