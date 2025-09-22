@@ -46,3 +46,60 @@ do {
     print ("Password is too obvious")
 }
 
+//The challenge is this: write a function that accepts an integer from 1 through 10,000, and returns the integer square root of that number. That sounds easy, but there are some catches: You can’t use Swift’s built-in sqrt() function or similar – you need to find the square root yourself.If the number is less than 1 or greater than 10,000 you should throw an “out of bounds” error.You should only consider integer square roots – don’t worry about the square root of 3 being 1.732, for example.If you can’t find the square root, throw a “no root” error.
+
+
+enum MathError : Error {
+    case lower_bound, upper_bound
+}
+
+
+func find_sqrt(_ num : Int) throws -> Int {
+    
+
+    if num < 1 {
+        throw MathError.lower_bound
+    } 
+    else if num > 1000 {
+        throw MathError.upper_bound
+    }
+
+    else {
+
+        var low = 1
+        var high = num
+        var ans = low
+
+        while low <= high {
+
+            let mid = (low + high) / 2
+            let sq = mid*mid 
+
+            if sq == num {
+                return mid
+            }
+
+            else if sq < num {
+                ans = mid
+                low = mid + 1
+            }
+
+            else {
+                high = mid - 1
+            }
+        }
+        return ans
+    }   
+}
+
+do {
+
+    let res = try find_sqrt(10001)
+    print (res)
+}   
+catch MathError.lower_bound {
+    print ("Please enter a number greater than 0")
+}
+catch MathError.upper_bound {
+    print ("Please enter a number less than equal to 1000")
+}
