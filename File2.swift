@@ -103,3 +103,30 @@ catch MathError.lower_bound {
 catch MathError.upper_bound {
     print ("Please enter a number less than equal to 1000")
 }
+
+// Closures - type of lambda functions in python
+
+let greet = { (name : String) -> String in 
+    return "Hello \(name)"
+}
+
+print (greet("Sadiva"))
+
+
+func makeIncrement(by amount : Int) -> () -> Int {
+    
+    var total = 0
+    return {
+        total += amount
+        return total
+    }
+}
+
+let addfive = makeIncrement(by : 5)
+
+print (addfive())
+print (addfive())
+
+
+// So, in is used to mark the end of the parameters and return type – everything after that is the body of the closure itself.
+
