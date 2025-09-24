@@ -143,3 +143,33 @@ let captain = team.sorted(by : { (name1: String, name2: String) -> Bool in
 })
 
 print (captain)
+
+let sOnly = team.filter { $0.hasPrefix("s") }
+
+print (sOnly)
+
+let teamUpper = team.map { $0.uppercased() }
+
+print (teamUpper)
+
+// accepting another function as an input to this function
+
+func generate() -> Int {
+    return Int.random(in: 1...30)
+}
+
+
+func makeArray(_ size: Int, using generate:() -> Int ) -> [Int] {
+    
+    var numbers = [Int]()
+
+    for _ in 1...size {
+        numbers.append(generate())
+    }
+
+    return numbers
+}
+
+let out = makeArray(10, using : generate)
+
+print (out)
