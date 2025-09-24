@@ -130,3 +130,16 @@ print (addfive())
 
 // So, in is used to mark the end of the parameters and return type – everything after that is the body of the closure itself.
 
+let team = ["sadiva", "sanjay", "alka"]
+
+let captain = team.sorted(by : { (name1: String, name2: String) -> Bool in 
+    if name1 == "alka" {
+        return true
+    } else if name2 == "sanjay" {
+        return false
+    }
+
+    return name1 < name2
+})
+
+print (captain)
