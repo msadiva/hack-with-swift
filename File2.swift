@@ -173,3 +173,23 @@ func makeArray(_ size: Int, using generate:() -> Int ) -> [Int] {
 let out = makeArray(10, using : generate)
 
 print (out)
+
+
+//Your job is to: Filter out any numbers that are even Sort the array in ascending order Map them to strings in the format “7 is a lucky number”Print the resulting array, one item per line
+
+let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+
+
+
+// filtering out even nunbers
+
+var evenNumbers = luckyNumbers.filter {$0 % 2 != 0 }
+
+
+evenNumbers = evenNumbers.sorted()
+
+print (evenNumbers)
+
+var evenNumbers2 = evenNumbers.map {"\($0) is a lucky number " }
+
+print (evenNumbers2)
