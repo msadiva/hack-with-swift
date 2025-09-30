@@ -109,3 +109,86 @@ struct Game2 {
 var pl = Game2(name : "Sadiva")
 
 print (pl.number)
+
+
+// access controls in swift - private, public and fileprivate
+
+
+struct Bank {
+    
+    private var funds = 0 
+
+    mutating func deposit(amount : Int) {
+
+        funds += amount
+        print ("Amount Deposited. Current Balance = \(funds)")
+    }
+
+    mutating func withdraw(amount : Int) -> Bool {
+        
+        if funds < amount {
+            return false
+        } else {
+            
+            funds -= amount
+            return true
+        }
+    }
+}
+
+var acc = Bank()
+
+acc.deposit(amount : 1000)
+
+let success = acc.withdraw(amount : 2000)
+
+print (success)
+
+
+// we can use static if we don't want something to exist uniquely 
+
+struct School {
+
+    static var headCount = 0
+
+    static func add(student : String) {
+        print ("\(student) joined the school. Congratulations")
+        headCount += 1
+    }
+}
+
+print (School.headCount)
+
+School.add(student : "Sadiva")
+
+print (School.headCount)
+
+// here’s a small task for you: create a struct to store information about a car, including its model, number of seats, and current gear, then add a method to change gears up or down. Have a think about variables and access control: what data should be a variable rather than a constant, and what data should be exposed publicly? Should the gear-changing method validate its input somehow?
+
+struct CarInfo {
+
+    let car : String
+    let model : String
+    var gear : Int
+
+    init(car : String, model : String, gear : Int) {
+            
+        self.car = car
+        self.model = model
+        self.gear = gear
+        }
+
+    mutating func changeGear(val : Int) {
+        
+        self.gear += val
+
+        print ("New Gear = \(self.gear)")
+    }
+
+}
+
+var car = CarInfo(car : "BMW", model :"X1", gear : 6)
+
+print (car.car, car.model, car.gear)
+
+car.changeGear(val : 2)
