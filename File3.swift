@@ -192,3 +192,115 @@ var car = CarInfo(car : "BMW", model :"X1", gear : 6)
 print (car.car, car.model, car.gear)
 
 car.changeGear(val : 2)
+
+// creating a class in swift 
+
+class Game3 {
+    
+    var score = 0 {
+
+        didSet {
+
+            print ("Score is now \(score)")
+        }
+    }
+}
+
+var gm = Game3()
+
+gm.score += 50
+
+// inheritance 
+
+class Employee3 {
+    
+    let hours : Int 
+
+    init(hours : Int) {
+        
+        self.hours = hours
+    }
+
+    func printSummary() {
+        
+        print ("I work \(self.hours) a day")
+    }
+}
+
+class Developer : Employee3 {
+
+    func work() {
+        print ("I am writing code for \(self.hours) hours")
+    }
+}
+
+class Manager : Employee3 {
+
+    func work() {
+        
+        print ("I am managing my team everyday for \(self.hours) hours")
+    }
+
+    override func printSummary() {
+        print ("I'm a great manager")
+    }
+}
+
+let robert = Developer(hours : 8)
+let joseph = Manager(hours : 10)
+
+robert.work()
+joseph.work()
+joseph.printSummary()
+
+
+// initializers in class
+
+class Vehicle {
+
+    let isElectric : Bool
+
+    init(isElectric : Bool) {
+        
+        self.isElectric = isElectric
+    }
+}
+
+class Car : Vehicle {
+
+    let isConvertible : Bool
+
+    init(isElectric : Bool, isConvertible : Bool) {
+        
+        self.isConvertible = isConvertible
+
+        super.init(isElectric : isElectric)
+    }
+}
+
+
+let teslax = Car(isElectric : false, isConvertible : true)
+
+// deinitializer in class
+
+
+class User4 {
+
+    let id : Int
+
+    init(id : Int) {
+        
+        self.id = id
+    }
+
+    deinit{
+        
+        print ("User ID - \(id), I'm Dead")
+    }
+}
+
+for i in 1...3 {
+    let user = User4(id : i)
+
+    print ("User \(i) is in control")
+}
