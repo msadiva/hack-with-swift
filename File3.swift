@@ -304,3 +304,54 @@ for i in 1...3 {
 
     print ("User \(i) is in control")
 }
+
+
+class Animal {
+
+    let legs : Int
+
+    init(legs : Int) {
+        
+        self.legs = legs
+    }
+
+    func printSummary() {
+        
+        print ("This animal has \(self.legs) legs")
+    }
+}
+
+class Dog : Animal {
+
+    override init(legs : Int) {
+        
+        super.init(legs : legs)
+    }
+
+    func speak() {
+        print ("BOW BOW BOW")
+    }
+}
+
+
+class Cat : Animal {
+
+    let isTame : Bool 
+
+    init(legs : Int, isTame : Bool) {
+        
+        self.isTame = isTame
+        super.init(legs : legs)
+    }
+
+    func speak() {
+        
+        print ("MEOW MEOW MEOW")
+    }
+}
+
+let corgi = Cat(legs : 4, isTame : false)
+let persian = Dog(legs : 4)
+
+corgi.speak()
+persian.speak()
