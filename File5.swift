@@ -125,3 +125,52 @@ struct Office : Housing {
 var office = Office(type : "Office", room : 10, cost : 150000.500, agent : "Sanjay")
 
 office.sales_summary()
+
+
+// handling missing data with optionals in Swift
+
+let opposites = [
+    "Mario" : "Wario",
+    "Luigi" : "Waluigi"
+]
+
+if let marioOpp = opposites["Mario"] {
+
+    print ("Mario's opp is \(marioOpp)")
+}
+
+if let sadivaOpp = opposites["Sadiva"] {
+    
+    print ("Sadiva's opp is \(sadivaOpp)")
+} else {
+    
+    print ("No opposite found for Sadiva")
+}
+
+// using guarlet to do the same
+
+func printSquare(for number : Int?) {
+    
+    guard let number = number else {
+        print ("Missing Input")
+        return
+    }
+
+    print ("\(number) x \(number) is \(number * number)")
+}
+
+printSquare(for: 5)
+
+//printSquare(for: 5.25)
+
+// options with nil coalescing
+
+let captains = [
+    "Enterprise" : "Picard",
+    "Voyager" : "Janeway",
+    "Defiant" : "Sisko"
+]
+
+let new = captains["Serenity"] ?? "N/A"
+
+print (new)
